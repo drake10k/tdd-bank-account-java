@@ -30,7 +30,21 @@ public class AccountTest {
     @Test
     public void withdrawAnAmountToDecreaseAccountBalance() {
         Account account = new Account();
+        account.deposit(20);
         account.withdraw(10);
-        assertThat(account.balance()).isEqualTo(-10);
+        assertThat(account.balance()).isEqualTo(10);
+    }
+
+    @Test
+    public void transferMoneyToAnotherAccountAndCheckBalance() {
+        Account debitor = new Account();
+        debitor.deposit(20);
+
+        Account creditor = new Account();
+
+        debitor.transfer(creditor, 10);
+
+        assertThat(debitor.balance()).isEqualTo(10);
+        assertThat(creditor.balance()).isEqualTo(10);
     }
 }

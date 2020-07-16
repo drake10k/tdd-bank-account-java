@@ -15,4 +15,9 @@ public class Account {
     public void withdraw(double amount) {
         balance -= amount;
     }
+
+    public void transfer(Account creditor, double amount) {
+        withdraw(amount);
+        creditor.deposit(amount);
+    }
 }
