@@ -8,7 +8,7 @@ public class Account {
         return balance;
     }
 
-    public void deposit(int amount) {
+    public void deposit(double amount) {
         balance += amount;
     }
 }

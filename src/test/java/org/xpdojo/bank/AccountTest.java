@@ -19,4 +19,11 @@ public class AccountTest {
         account.deposit(20);
         assertThat(account.balance()).isEqualTo(30);
     }
+
+    @Test
+    public void depositAnAmountWithDecimalToIncreaseAccountBalance() {
+        Account account = new Account();
+        account.deposit(10.3);
+        assertThat(account.balance()).isEqualTo(10.3);
+    }
 }
