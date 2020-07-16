@@ -19,7 +19,9 @@ public class Account {
     }
 
     public void transfer(Account creditor, double amount) {
-        withdraw(amount);
-        creditor.deposit(amount);
+        if (balance() >= amount) {
+            withdraw(amount);
+            creditor.deposit(amount);
+        }
     }
 }

@@ -54,4 +54,14 @@ public class AccountTest {
         account.withdraw(10);
         assertThat(account.balance()).isNotNegative();
     }
+
+    @Test
+    public void transferMoneyWhenSenderBalanceIsLowerThanTransferredAmount() {
+        Account sender = new Account();
+        Account receiver = new Account();
+        sender.transfer(receiver, 10);
+
+        assertThat(sender.balance()).isNotNegative();
+        assertThat(receiver.balance()).isEqualTo(0);
+    }
 }
