@@ -13,7 +13,9 @@ public class Account {
     }
 
     public void withdraw(double amount) {
-        balance -= amount;
+        if (balance - amount > 0) {
+            balance -= amount;
+        }
     }
 
     public void transfer(Account creditor, double amount) {
