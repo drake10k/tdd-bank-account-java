@@ -37,15 +37,15 @@ public class AccountTest {
 
     @Test
     public void transferMoneyToAnotherAccount() {
-        Account debitor = new Account();
-        debitor.deposit(20);
+        Account sender = new Account();
+        sender.deposit(20);
 
-        Account creditor = new Account();
+        Account receiver = new Account();
 
-        debitor.transfer(creditor, 10);
+        sender.transfer(receiver, 10);
 
-        assertThat(debitor.balance()).isEqualTo(10);
-        assertThat(creditor.balance()).isEqualTo(10);
+        assertThat(sender.balance()).isEqualTo(10);
+        assertThat(receiver.balance()).isEqualTo(10);
     }
 
     @Test
