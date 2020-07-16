@@ -13,9 +13,10 @@ public class AccountTest {
     }
 
     @Test
-    public void depositAnAmountToIncreaseAccountBalance() {
+    public void depositMultipleAmountsToIncreaseAccountBalance() {
         Account account = new Account();
         account.deposit(10);
-        assertThat(account.balance()).isEqualTo(10);
+        account.deposit(20);
+        assertThat(account.balance()).isEqualTo(30);
     }
 }
